@@ -17,6 +17,7 @@ h1{
 } */
 
 /* ID Selector */
+
 #idOne{
     color: brown;
 }
@@ -38,4 +39,34 @@ h1{
 
 .child > a{
     color: green;
+}
+
+/* pseudo selector */
+/* link */
+a:link{
+    color: chartreuse;
+}
+
+a:hover{
+    color: blueviolet;
+}
+
+a:active{
+    color: yellow;
+}
+
+a:visited{
+    color: brown;
+}
+
+/* Target */
+
+/* :target{
+    color: orange;
+    border: 2px solid black;
+} */
+
+p:target{
+    color: red;
+    border: 2px solid black;
 }
