@@ -8,7 +8,7 @@
 h1{
     color: blueviolet;
     text-align: center;
-    margin: 0px;
+    margin: 50px 0px;
 }
 
 /* Attributes Selector */
@@ -120,4 +120,58 @@ p:target{
     border: 2px solid black;
     width: 300px;
     display: inline-block;
+}
+
+/* float lesson */
+
+.float_left img{
+    width: 40%;
+    float: left;
+}
+
+.clear{
+    clear: both;
+}
+
+.float_right img{
+    width: 40%;
+    float: right;
+}
+
+/* Grid */
+
+.gridOne div,.gridTwo div,.gridThree div,.gridFour div,.gridFive div,.gridSix div{
+    padding: 20px;
+    color: white;
+    text-align: center;
+}
+
+.gridOne,.gridTwo,.gridThree,.gridFour,.gridFive,.gridSix{
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+
+.gridTwo{
+    grid-column-gap: 50px;
+}
+
+.gridThree{
+    grid-row-gap: 30px;
+}
+
+.gridFour{
+    grid-gap: 50px;
+    /* grid-row-gap: 40px; */
+    /* grid-column-gap: 20px; */
+}
+
+.columnadd{
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+.rowadd{
+    grid-column-start: 2;
+    grid-row-start: 2;
+    grid-row-end: 4;
 }
