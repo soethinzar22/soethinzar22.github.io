@@ -175,3 +175,60 @@ p:target{
     grid-row-start: 2;
     grid-row-end: 4;
 }
+/* Position Relative */
+.relative_parent{
+    border: 2px solid red;
+    width: 1000px;
+    height: 500px;
+}
+
+.relative{
+    border: 2px solid green;
+    width: 500px;
+    height: 200px;
+    position: relative;
+    top: 100px;
+    left: 150px;
+
+}
+.absolute_parent{
+    border: 2px solid yellow;
+    width: 1000px;
+    height: 500px;
+    position: relative;
+}
+.absolute{
+    border: 2px solid black;
+    width: 200px;
+    height: 300px;
+    position: absolute;
+    top: 100px;
+    right: 30px;
+}
+
+.fixed{
+    position: fixed;
+    top: 100px;
+    right: 500px;
+}
+
+/* online font */
+
+
+.onlineFont{
+    font-family: "Dancing Script", serif;
+    font-optical-sizing: auto;
+    font-weight: <weight>;
+    font-style: normal;
+  }
+
+/* Offline Font */
+
+@font-face{
+    src: url(static/LexendGiga-Black.ttf);
+    font-family: "dancingscript";
+}
+
+.offlineFont{
+    font-family: "dancingscript";
+}
