@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Types</title>
+</head>
+<body>
+    <h1>Data Types Lessons</h1>
+
+    <script>
+        //String Data Types
+        let name = `Soe Thinzar Tun `;
+        console.log(name);
+        console.log(typeof(name));
+
+        //Numeric Data types 
+        let age = 25;
+        console.log(age);
+        console.log(typeof(age));
+
+        let single = true;
+        console.log(single);
+        console.log(typeof(single));
+
+        //undifined
+        let myBaby;
+        console.log(myBaby);
+
+        //null
+        let son = null;
+        console.log(null);
+        console.log(typeof(null));
+
+        //array
+        let arr = new Array('a','b','c',1,2,3);
+        console.log(arr);
+        console.log(arr[2]);
+
+        let studentlist = ['Mg Mg','Kyaw Kyaw','Myo Myo','Htun Htun','Aung Aung','Soe Soe'];
+        console.log(studentlist);
+        console.log(studentlist,[3]);
+
+        //multiarray
+        let employeelist = ['Mg Mg','Kyaw Kyaw','Myo Myo',['Htun Htun','Aung Aung'],'Soe Soe'];
+        console.log(employeelist);
+        console.log(employeelist[3][0]);
+
+        //Object
+        let carInfo = {
+            carname : "Honda Fix",
+            color : ['White','Black'],
+            number : '8M-4520',
+        }
+
+        console.log(carInfo);
+        console.log(carInfo.color[0]);
+
+    </script>
+</body>
+</html>
