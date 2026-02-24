@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Today is Thuesday.</h1>
+    <button id="add_css">Add Css</button>
+    <script src="jquery-4.0.0.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#add_css').click(function(){
+                $('h1').css({'color':'red','background-color':'blue'})
+            })
+        })
+    </script>
+</body>
+</html>
