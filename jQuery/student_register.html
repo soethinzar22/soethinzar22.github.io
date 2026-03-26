@@ -6,8 +6,8 @@
     <title>Document</title>
 </head>
 <body>
-    <div>
-        <h2 id="add_student">Add Student</h2>
+    <div id="add_student">
+        <h2 >Add Student</h2>
         Name: <input type="text" id="name"><br><br>
         Email: <input type="email" id="email"><br><br>
         Phone: <input type="number" id="phone"><br><br>
@@ -20,6 +20,21 @@
         <button id="add">Add Student</button>
     </div>
 
+    <div id="update_student">
+        <h2 >Update Student</h2>
+        <input type="hidden" id="key">
+        Name: <input type="text" id="edit_name"><br><br>
+        Email: <input type="email" id="edit_email"><br><br>
+        Phone: <input type="number" id="edit_phone"><br><br>
+        Years: <select name="" id="edit_year">
+            <option value="">Choose Year</option>
+            <option value="First">First Year</option>
+            <option value="Second">Second Year</option>
+            <option value="Third">Third Year</option>
+        </select><br><br>
+        <button id="update">Update Student</button>
+    </div>
+
     <h1>Student Lists</h1>
     <table border="1" cellspacing="0" cellpadding="25">
         <thead>
@@ -29,6 +44,7 @@
                 <th>Email</th>
                 <th>Phone</th>
                 <th>Year</th>
+                <th>Action</th>
             </tr>
         </thead>
         <tbody>
@@ -39,6 +55,7 @@
     <script src="jquery-4.0.0.min.js"></script>
     <script>
         $(document).ready(function(){
+            $('#update_student').hide();//အစမှာ update div တစ်ခုလုံးကို hide ထားမယ် 
             function getData(){
                 let stuString = localStorage.getItem('students');
                 let stuArray = JSON.parse(stuString);
@@ -60,7 +77,11 @@
                                 <td>${email}</td>
                                 <td>${phone}</td>
                                 <td>${year}</td>
-                            </tr>`;                            
+                                <td>
+                                    <button class="edit" data-key="${i}" data-name="${name}" data-email="${email}" data-phone="${phone}" data-year="${year}">Edit</button> 
+                                    <button>Delete</button>
+                                </td>
+                            </tr>`;     //data- က data သယ်ဖို့ သုံး                       
                 })
                 $('tbody').html(data);
             }
@@ -125,6 +146,55 @@
                 getData();
                 
 
+            })
+            
+            $('tbody').on('click','.edit',function(){
+                $('#add_student').hide();
+                $('#update_student').show();
+
+                let key = $(this).data('key');
+                let name = $(this).data('name');
+                let email = $(this).data('email');
+                let phone = $(this).data('phone');
+                let year = $(this).data('year');
+
+                console.log(key,name,email,phone,year);
+                $('#key').val(key);
+                $('#edit_name').val(name);
+                $('#edit_email').val(email);
+                $('#edit_phone').val(phone);
+                $('#edit_year').val(year);
+                
+            });
+
+            $('#update').click(function(){
+                let key = $('#key').val();
+                let name = $('#edit_name').val();
+                let email = $('#edit_email').val();
+                let phone = $('#edit_phone').val();
+                let year = $('#edit_year').val();
+
+                console.log(key,name,email,phone,year);
+
+                let studentString = localStorage.getItem('students');
+                if(studentString) {
+                    let studentArray = JSON.parse(studentString);
+
+                    studentArray[key].stu_name = name ;
+                    studentArray[key].stu_email = email ;
+                    studentArray[key].stu_phone = phone ;
+                    studentArray[key].stu_year = year ;
+
+                    let studentData = JSON.stringify(studentArray);
+                    localStorage.setItem('students',studentData);
+
+                    getData();
+
+                    $('#add_student').show();
+                    $('#update_student').hide();
+
+                }
+                
             })
         })
     </script>
