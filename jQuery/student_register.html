@@ -79,7 +79,7 @@
                                 <td>${year}</td>
                                 <td>
                                     <button class="edit" data-key="${i}" data-name="${name}" data-email="${email}" data-phone="${phone}" data-year="${year}">Edit</button> 
-                                    <button>Delete</button>
+                                    <button class="delete" data-key="${i}">Delete</button>
                                 </td>
                             </tr>`;     //data- က data သယ်ဖို့ သုံး                       
                 })
@@ -196,6 +196,30 @@
                 }
                 
             })
+ 
+            $('tbody').on('click','.delete',function(){
+                let key = $(this).data('key');
+                console.log(key);
+
+                let ans = confirm("Are you sure delete?");
+                console.log(ans);
+                if(ans){
+                    let studentString = localStorage.getItem('students');
+                    if(studentString){
+                        let studentArray = JSON.parse(studentString);
+
+                        studentArray.splice(key,1)//splice(start,number)
+
+                        let studentData = JSON.stringify(studentArray);
+                        localStorage.setItem('students',studentData);
+
+                        getData();
+                    }
+                }
+                
+                
+            })
+ 
         })
     </script>
 </body>
