@@ -15,6 +15,7 @@
         <div class="navlink">
             <a href="">Home</a>
             <i class="fa-solid fa-cart-arrow-down"></i>
+            <span id="item-count">()</span>
         </div>
     </div>
     <div class="laptop">
@@ -22,19 +23,19 @@
                 <img src="images/p 1.jpg" alt="" class="images">
                 <p>Laptop 1</p>
                 <p>Price: 2340000</p>
-                <button class="button">Add to Cart</button>
+                <button class="button addToCart" data-id="1" data-name="Laptop 1" data-price="2340000">Add to Cart</button>
             </div>
             <div class="laptop-border">
                 <img src="images/p 2.jpg" alt="" class="images">
                 <p>Laptop 2</p>
                 <p>Price: 1450000</p>
-                <button class="button">Add to Cart</button>
+                <button class="button addToCart" data-id="2" data-name="Laptop 2" data-price="1450000">Add to Cart</button>
             </div>
             <div class="laptop-border">
                 <img src="images/p 3.avif" alt="" class="images">
                 <p>Laptop 3</p>
                 <p>Price: 1950000</p>
-                <button class="button">Add to Cart</button>
+                <button class="button addToCart" data-id="3" data-name="Laptop 3" data-price="1950000">Add to Cart</button>
             </div>
             <div class="laptop-border">
                 <img src="images/p 4.avif" alt="" class="images">
@@ -52,22 +53,25 @@
             </div>
             <div class="laptop-border">
                 <img src="images/p 6.jpg" alt="" class="images">
-                <p>Laptop 2</p>
+                <p>Phone 2</p>
                 <p>Price: 1450000</p>
                 <button class="button">Add to Cart</button>
             </div>
             <div class="laptop-border">
                 <img src="images/P 8.jpg" alt="" class="images">
-                <p>Laptop 3</p>
+                <p>Phone 3</p>
                 <p>Price: 1950000</p>
                 <button class="button">Add to Cart</button>
             </div>
             <div class="laptop-border">
                 <img src="images/P 9.webp" alt="" class="images">
-                <p>Laptop 4</p>
+                <p>Phone 4</p>
                 <p>Price: 3000000</p>
                 <button class="button">Add to Cart</button>
             </div>
         </div>
+
+        <script src="jquery-4.0.0.min.js"></script>
+        <script src="script.js"></script>
 </body>
 </html>
