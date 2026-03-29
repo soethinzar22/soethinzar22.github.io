@@ -1,6 +1,6 @@
 * {
-  margin: 0;
-  padding: 0;
+  /* margin: 0;
+  padding: 0; */
   box-sizing: border-box; /* padding ကြောင့် scroll ထွက်မလာအောင် တားပေးတယ် */
 }
 
@@ -58,3 +58,8 @@ html, body {
     border-radius: 5px;
     margin: 5px 0 ;
 }
+
+/* tr td, tr th{
+    padding: 25px;
+    /* border-spacing: 0;
+} */
